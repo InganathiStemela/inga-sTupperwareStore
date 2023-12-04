@@ -1,0 +1,14 @@
+body{
+    background-color: blue;
+}
+
+/* nav{
+    justify-content: right;
+
+} */
+img1{
+    justify-content: center;
+    align-content: center;
+    width: 150px;
+    height: 100px;
+}

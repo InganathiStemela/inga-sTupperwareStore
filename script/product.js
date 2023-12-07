@@ -1,38 +1,34 @@
 let products = []
 
 let item1 = {
-    id: 1,
+    image: 'https://i.postimg.cc/httw1JtM/bulk-keeper-10-L-1.webp',
     name: 'Bulk Keeper',
-    description: 'Convenient and smart solution for storing bulk quantities in the kitchen. Ideal to store cool drink cans, children\'s toys, hobby items, blankets or cleaning supplies. The airtight seal keeps food fresh for longer. Perfect to use as a gift basket or to make up hampers',
-    price: 469,
-    image: 'https://i.postimg.cc/dVQDzrrR/bulk-keeper-10-L.webp'
+    price: 469
 }
 
-function Constructor(id, name, description, price, image) {
-    this.id = id,
+function Constructor(image, name, price) {
+    this.image = image,
     this.name = name,
-    this.description = description,
-    this.price = price,
-    this.image = image
+    this.price = price
 }
 
-let item2 = new Constructor(2, 'Mickey Gift Set', '', 199, 'https://i.postimg.cc/5Ny0xvsf/mickey-gift-set.webp');
-let item3 = new Constructor(3, 'Mickey Sig Line', '', 139, 'https://i.postimg.cc/ncKx7G04/mickey-sig-line.webp');
-let item4 = new Constructor(4, 'Ombre Set', '', 209, 'https://i.postimg.cc/bJYScvrM/ombre-set.webp');
-let item5 = new Constructor(5, 'Festive Set', '', 209, 'https://i.postimg.cc/7LyRwFg0/festive-set.webp');
-let item6 = new Constructor(6, 'Eco Bottle Set', '', 159, 'https://i.postimg.cc/qRT1H2HL/eco-bottle-set.webp');
-let item7 = new Constructor(7, 'Patty Press', '', 399, 'https://i.postimg.cc/x1x1JP1s/patty-press.webp');
-let item8 = new Constructor(8, 'Small Square away', '', 188, 'https://i.postimg.cc/tgpNJp7d/small-square-away.webp');
-let item9 = new Constructor(9, 'Gamer Set', '', 209, 'https://i.postimg.cc/g20VRNmQ/gamer-set.webp');
-let item10 = new Constructor(10, 'Disney Baby Gift Set', '', 399, 'https://i.postimg.cc/sfKh35R2/disney-baby-gift-set.webp');
-let item11 = new Constructor(11, 'Blossom Server', '', 179, 'https://i.postimg.cc/Fsys94SV/blossom-server.webp');
-let item12 = new Constructor(12, 'Inspiration Bowls', '', 228, 'https://i.postimg.cc/NfFFkV26/inspirations-bowls-400ml.jpg');
-let item13 = new Constructor(13, 'Fast Quench Bottle', '', 199, 'https://i.postimg.cc/rpFS1gT7/fast-quench-bottle.jpg');
-let item14 = new Constructor(14, 'Snack Cups', '', 109, 'https://i.postimg.cc/s2qzrjVm/snack-cups.jpg');
-let item15 = new Constructor(15, 'Multi Server', '', 259, 'https://i.postimg.cc/GpGxh9cm/multi-server.webp');
-let item16 = new Constructor(16, 'Click to Go', '', 219, 'https://i.postimg.cc/pLdNgbJT/click-to-go.jpg');
-let item17 = new Constructor(17, 'Beverage Dispenser', '', 599, 'https://i.postimg.cc/3J4JzG8V/beverage-dispenser.jpg');
-let item18 = new Constructor(18, 'Freezer Square', '', 229, 'https://i.postimg.cc/W4WfghB6/freezer-square.jpg')
+let item2 = new Constructor('https://i.postimg.cc/5Ny0xvsf/mickey-gift-set.webp', 'Mickey Gift Set', 199);
+let item3 = new Constructor('https://i.postimg.cc/hGbmr0P7/mickey-sig-line.webp', 'Mickey Sig Line', 139);
+let item4 = new Constructor('https://i.postimg.cc/bJYScvrM/ombre-set.webp', 'Ombre Set', 209);
+let item5 = new Constructor('https://i.postimg.cc/qv4FJ4Zf/festive-set.webp', 'Festive Set', 209);
+let item6 = new Constructor('https://i.postimg.cc/qRT1H2HL/eco-bottle-set.webp', 'Eco Bottle Set', 159);
+let item7 = new Constructor('https://i.postimg.cc/9XwDYqtp/patty-press.webp', 'Patty Press', 399);
+let item8 = new Constructor('https://i.postimg.cc/tgpNJp7d/small-square-away.webp', 'Small Square away', 188);
+let item9 = new Constructor('https://i.postimg.cc/g20VRNmQ/gamer-set.webp', 'Gamer Set', 209);
+let item10 = new Constructor('https://i.postimg.cc/sfKh35R2/disney-baby-gift-set.webp', 'Disney Baby Gift Set', 399);
+let item11 = new Constructor('https://i.postimg.cc/kM0jXKgR/blossom-server-1.webp', 'Blossom Server', 179);
+let item12 = new Constructor('https://i.postimg.cc/c4445gf2/inspirations-bowls-400ml.jpg', 'Inspiration Bowls', 228);
+let item13 = new Constructor('https://i.postimg.cc/rpFS1gT7/fast-quench-bottle.jpg', 'Fast Quench Bottle', 199);
+let item14 = new Constructor('https://i.postimg.cc/Vvh9pyZV/snack-cups.jpg', 'Snack Cups', 109);
+let item15 = new Constructor('https://i.postimg.cc/BQ0d7T3B/multi-server.webp', 'Multi Server', 259);
+let item16 = new Constructor('https://i.postimg.cc/mD979G1B/click-to-go.jpg', 'Click to Go', 219);
+let item17 = new Constructor('https://i.postimg.cc/76HGRVvp/beverage-dispenser-1.jpg', 'Beverage Dispenser', 599);
+let item18 = new Constructor('https://i.postimg.cc/HkW9Vx0g/freezer-square.jpg', 'Freezer Square', 229)
 
 products.push(item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, item16, item17, item18),
 
@@ -44,7 +40,7 @@ products = JSON.parse(localStorage.getItem('products'))
 
 function displayProducts(){
     let cardContainer = document.querySelector('.card')
-    cardContainer.innerHTML = "card",
+    cardContainer.innerHTML = "",
     products.forEach((product, index)=> {
         console.log(product);
         let card = document.createElement('div');
@@ -53,7 +49,7 @@ function displayProducts(){
         <div class="card">
         <div class="card-body">
         <img src='${product.image}' class="card-img-top" alt="...">
-        <h5 class="card-title">"${product.name}</h5>
+        <h5 class="card-title">${product.name}</h5>
         <p>R${product.price}</p>
         </div>
         </dv>
@@ -64,20 +60,20 @@ function displayProducts(){
 displayProducts();
 
 let sortButton = document.querySelector('button');
-let itemList = document.querySelector('products');
+let itemList = document.getElementById('${products.name}');
 
 function sortItems() {
   let productsT = Array.from(itemList.getElementsByTagName());
   let sortedTasks = productsT.sort((a, b) => a.innerText.localeCompare(b.innerText));
   
   while (itemList.firstChild) {
-    itemList.removeChild(itemList.firstChild);
+    itemList.sortChild(itemList.firstChild);
   }
-  sortedTasks.forEach(productst => {
+  sortedTasks.forEach(productsT => {
     itemList.appendChild(productsT);
   });
 }
-function addTask() {
+function searchItems() {
     let del =  document.createElement('button');
   let taskInput = document.getElementById('taskInput');
   let taskText = `${taskInput.value.trim()}`
@@ -91,3 +87,5 @@ function addTask() {
     alert('Please enter a task!');
   }
 }
+
+

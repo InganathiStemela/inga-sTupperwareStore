@@ -19,4 +19,7 @@ img1{
 footer{
     margin-bottom: auto;
     font-style: italic;
+    background-color: black;
+    color: white;
+    text-align: center;
 }

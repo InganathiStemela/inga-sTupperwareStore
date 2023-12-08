@@ -3,7 +3,7 @@ let products = []
 let item1 = {
     id: 1,
     name: 'Bulk Keeper',
-    description: '',
+    description: '10L',
     price: 469,
     image: 'https://i.postimg.cc/httw1JtM/bulk-keeper-10-L-1.webp'
 }
@@ -55,8 +55,8 @@ function displayTable(){
         <td>${products.name}</td>
         <td>R${products.price}</td>
         <td>${products.description}</td>
-        <td><image src='${products.image}'>/td>
-        <td><button class='add' value='${index}'>Add to cart</button>
+        <td><image hey src='${products.image}'></image></td>
+        <td><button class='edit' value='${index}'>Edit</button>
         <button class='delete' value='${index}'>Delete</button></td>
         </tr>
         `
@@ -88,3 +88,7 @@ table.addEventListener('click', function(){
        add(event.target.value)
     }
 })
+
+
+
+

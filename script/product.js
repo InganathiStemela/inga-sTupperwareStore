@@ -37,55 +37,95 @@ localStorage.setItem('products', JSON.stringify(products)),
 products = localStorage.getItem('products'),
 
 products = JSON.parse(localStorage.getItem('products'))
-
-function displayProducts(){
-    let cardContainer = document.querySelector('.card')
-    cardContainer.innerHTML = "",
-    products.forEach((product, index)=> {
-        console.log(product);
-        let card = document.createElement('div');
-        card.classList.add('card')
-        card.innerHTML = `
-        <div class="card">
-        <div class="card-body">
-        <img src='${product.image}' class="card-img-top" alt="...">
-        <h5 class="card-title">${product.name}</h5>
-        <p>R${product.price}</p>
-        </div>
-        </dv>
-        `;
-        cardContainer.appendChild(card);
-    });
+function displayProducts() {
+  let cardContainer = document.querySelector('.cards')
+  cardContainer.innerHTML = "",
+  products.forEach((product, index) => {
+    cardContainer.innerHTML += `
+    <div class="card card-style mx-4 my-3">
+    <img src='${product.image}' class="card-img-top img-fluid" alt="...">
+  <div class="card-body d-flex justify-content-center my-3">
+  <div>
+  <h5 class="card-title fs-3">${product.name}</h5>
+  <div class="d-flex justify-content-center">
+  <p class="fs-3">R${product.price}</p>
+  </div>
+  <div class="d-flex justify-content-center"><button class='add' value='${index}'>Add to cart</button></div>
+  </div>
+  </div>
+</div>
+    `
+  })
 }
 displayProducts();
 
-let sortButton = document.querySelector('button');
-let itemList = document.getElementById('${products.name}');
 
-function sortItems() {
-  let productsT = Array.from(itemList.getElementsByTagName());
-  let sortedTasks = productsT.sort((a, b) => a.innerText.localeCompare(b.innerText));
+
+// function displayProducts(){
+//     let cardContainer = document.querySelector('.card')
+//     cardContainer.innerHTML = "",
+//     products.forEach((product, index)=> {
+//         console.log(product);
+//         // let card = document.createElement('div');
+//         // card.classList.add('card')
+//         cardContainer.innerHTML += `
+
+
+//         <div class="card-body col-lg-4 col-md-4 col-12">
+//         <img src='${product.image}' class="card-img-top" alt="...">
+//         <h5 class="card-title">${product.name}</h5>
+//         <p>R${product.price}</p>
+//         <td><button class='add' value='${index}'>Add to cart</button>
+//         </div>
+
+
+//         `;
+//         // cardContainer.appendChild(card);
+//     });
+// }
+
+
+// let sortButton = document.querySelector('button');
+// let itemList = document.getElementById('${products.name}');
+
+// function sortItems() {
+//   let productsT = Array.from(itemList.getElementsByTagName());
+//   let sortedTasks = productsT.sort((a, b) => a.innerText.localeCompare(b.innerText));
   
-  while (itemList.firstChild) {
-    itemList.sortChild(itemList.firstChild);
-  }
-  sortedTasks.forEach(productsT => {
-    itemList.appendChild(productsT);
-  });
-}
-function searchItems() {
-    let del =  document.createElement('button');
-  let taskInput = document.getElementById('taskInput');
-  let taskText = `${taskInput.value.trim()}`
+//   while (itemList.firstChild) {
+//     itemList.sortChild(itemList.firstChild);
+//   }
+//   sortedTasks.forEach(productsT => {
+//     itemList.appendChild(productsT);
+//   });
+// }
+// function searchItems() {
+//     let del =  document.createElement('button');
+//   let taskInput = document.getElementById('taskInput');
+//   let taskText = `${taskInput.value.trim()}`
 
-  if (taskText !== '') {
-    let newTask = document.createElement();
-    newTask.textContent = taskText;
-    itemList.appendChild(newTask);
-    taskInput.value = '';
-  } else {
-    alert('Please enter a task!');
-  }
-}
+//   if (taskText !== '') {
+//     let newTask = document.createElement();
+//     newTask.textContent = taskText;
+//     itemList.appendChild(newTask);
+//     taskInput.value = '';
+//   } else {
+//     alert('Please enter a task!');
+//   }
+// }
+// function displayProducts() {
+//   for (let item of products) {
+// let addToCartBtn = document.createElement("button");
+//     addToCartBtn.classList.add("add-to-cart-btn");
+//     addToCartBtn.setAttribute("data-item-id", products.id);
+//     addToCartBtn.addEventListener('click', () => {
+//       addToCart(products)
+//     });
+//     addToCartBtn.textContent = "Add To Cart";
+//     card.appendChild(addToCartBtn);
 
+//     document.getElementById("prods").appendChild(card);
+//   }
+// }
+// displayProducts();
 

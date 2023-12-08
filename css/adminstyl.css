@@ -1,0 +1,75 @@
+/* 
+
+.thelinks:hover {
+    color: black;
+}
+.btn-secondary {
+    border-radius: 0;
+    background-color: black;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+.btn-primary {
+    border-radius: 0;
+    background-color: black;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+.navbar-nav {
+    padding-right: 10% !important;
+}
+.nav-link:hover {
+    font-weight: bold !important;
+}
+input {
+    width: 300px;
+    height: 40px;
+    border-radius: 0;
+    border: solid black
+}
+@media screen and (max-width: 340px) {
+    input {
+        width: 270px;
+    }
+}
+#addToStore {
+    width: 10rem;
+    height: 3rem;
+    border: solid black;
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+}
+.row {
+    display: grid;
+}
+.border-1 {
+    background-color: black;
+    color: white;
+    border: solid white;
+}
+thead {
+    border: solid white;
+}
+table {
+    margin: auto;
+}
+@media (max-width: 767px) {
+    #product-table thead {
+      display: none;
+    }
+
+    #product-table tbody tr {
+      display: block;
+      margin-bottom: 20px;
+     
+    }
+
+    #product-table tbody td {
+      display: block;
+      text-align: center;
+    }
+  } */
+  

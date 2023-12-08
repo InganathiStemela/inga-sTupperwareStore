@@ -4,10 +4,10 @@ body{
     background-color: rgb(137, 207, 240);
 
 }
-.about-img{
+.about img{
     justify-content: center;
     align-content: center;
-    display: flex;
+    display: block;
     margin: auto;
     width: 25%;
     border: 3px solid;

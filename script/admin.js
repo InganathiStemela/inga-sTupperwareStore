@@ -43,51 +43,50 @@ products = localStorage.getItem('products'),
 products = JSON.parse(localStorage.getItem('products'))
 
 
-let table = document.querySelector('table')
+let table = document.querySelector('table');
 
-function displayTable(){
-    let items = products.map(function(products,index){
-        console.log(products);
-        console.log(index);
-        return`
-        <tr>
-        <td>${products.id}</td>
-        <td>${products.name}</td>
-        <td>R${products.price}</td>
-        <td>${products.description}</td>
-        <td><image hey src='${products.image}'></image></td>
-        <td><button class='edit' value='${index}'>Edit</button>
-        <button class='delete' value='${index}'>Delete</button></td>
-        </tr>
-        `
-    })
+function displayTable() {
+  let items = products.map(function (product, index) {
+    return `
+      <tr>
+        <td>${product.id}</td>
+        <td>${product.name}</td>
+        <td>R${product.price}</td>
+        <td>${product.description}</td>
+        <td><img src='${product.image}' alt="Product Image"></td>
+        <td>
+          <button class='edit' value='${index}'>Edit</button>
+          <button class='delete' value='${index}'>Delete</button>
+        </td>
+      </tr>
+    `;
+  });
 
-    table.innerHTML = items.join('')
-}
-displayTable(products)
-
-function toLocal(){
-    localStorage.setItem('products', JSON.stringify(products)),
-
-    products =JSON.parse(localStorage.getItem('products'))
+  table.innerHTML = items.join('');
 }
 
-table.style.backgroundColor = 'grey'
-table.style.color = 'black'
+function toLocal() {
+  localStorage.setItem('products', JSON.stringify(products)),
+    (products = JSON.parse(localStorage.getItem('products')));
+}
 
-let addToCartButton = document.querySelector('add')
+table.style.backgroundColor = 'grey';
+table.style.color = 'black';
+
+let addToCartButton = document.querySelector('.add');
 
 function add(position) {
-   products.splice(position,1),
-   displayTable(),
-   toLocal()
+  products.splice(position, 1),
+    displayTable(),
+    toLocal();
 }
 
-table.addEventListener('click', function(){
-    if (event.target.classList.contains('add to cart')){
-       add(event.target.value)
-    }
-})
+table.addEventListener('click', function () {
+  if (event.target.classList.contains('add')) {
+    add(event.target.value);
+  }
+});
+displayTable(products);
 
 
 
